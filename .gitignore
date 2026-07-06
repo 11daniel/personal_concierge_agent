@@ -1,0 +1,17 @@
+# Virtual environment
+venv/
+.venv/
+env/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Python caches
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Local databases
+test_concierge.db
