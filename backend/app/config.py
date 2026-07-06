@@ -6,8 +6,8 @@ from dotenv import load_dotenv
 BASE_DIR = Path(__file__).resolve().parent.parent
 PROJECT_ROOT = BASE_DIR.parent
 
-# Load local environment variables from project root
-load_dotenv(dotenv_path=PROJECT_ROOT / ".env")
+# Load local environment variables from project root and override pre-existing shell variables
+load_dotenv(dotenv_path=PROJECT_ROOT / ".env", override=True)
 
 # Database configuration
 DATABASE_URL = os.getenv("DATABASE_URL", f"sqlite:///{BASE_DIR}/personal_concierge.db")
