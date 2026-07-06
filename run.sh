@@ -10,8 +10,10 @@ export PYO3_USE_ABI3_FORWARD_COMPATIBILITY=1
 echo "🚀 Starting Personal Concierge Agent..."
 
 # Set up and activate virtual environment to manage dependencies locally
-if [ ! -d "venv" ]; then
-    echo "🌐 No virtual environment found. Creating one..."
+# Check if pip exists inside venv to verify the environment is not empty or broken
+if [ ! -f "venv/bin/pip" ]; then
+    echo "🌐 Virtual environment not found or broken. Creating a fresh one..."
+    rm -rf venv
     # Attempt to use python3.12 (highly stable) if available, otherwise fallback to system python3
     if command -v python3.12 &>/dev/null; then
         echo "🐍 Using Python 3.12..."
