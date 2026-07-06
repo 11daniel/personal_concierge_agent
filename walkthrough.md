@@ -60,7 +60,7 @@ PYTHONPATH=backend ./venv/bin/pytest
 1. Ensure you have Python 3.12 installed on your system.
 2. Navigate to the project directory:
    ```bash
-   cd /Users/Gavrie/.gemini/antigravity/scratch/personal_concierge_agent
+   cd personal_concierge_agent
    ```
 3. Run the startup script to install dependencies and run both servers simultaneously:
    ```bash
