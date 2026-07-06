@@ -39,10 +39,23 @@ Exposes endpoints under `/api`:
 
 ## Verification & Test Results
 
-We ran our tests using `pytest` inside the virtual environment under Python 3.12:
+We ran our tests using `pytest` inside the virtual environment:
 
+**On macOS/Linux/WSL:**
 ```bash
 PYTHONPATH=backend ./venv/bin/pytest
+```
+
+**On Windows (Command Prompt):**
+```cmd
+set PYTHONPATH=backend
+venv\Scripts\pytest
+```
+
+**On Windows (PowerShell):**
+```powershell
+$env:PYTHONPATH="backend"
+.\venv\Scripts\pytest
 ```
 
 ### Test Suite Execution Summary
@@ -57,15 +70,19 @@ PYTHONPATH=backend ./venv/bin/pytest
 
 ## How to Run the App
 
-1. Ensure you have Python 3.12 installed on your system.
+1. Ensure you have Python 3.12 (recommended) installed on your system.
 2. Navigate to the project directory:
-   ```bash
-   cd personal_concierge_agent
-   ```
+   - **macOS/Linux/WSL**: `cd /Users/Gavrie/projects/personal_concierge_agent`
+   - **Windows**: `cd C:\path\to\projects\personal_concierge_agent`
 3. Run the startup script to install dependencies and run both servers simultaneously:
-   ```bash
-   ./run.sh
-   ```
+   - **macOS/Linux/WSL**:
+     ```bash
+     ./run.sh
+     ```
+   - **Windows (Command Prompt / PowerShell)**:
+     ```cmd
+     run.bat
+     ```
 4. Streamlit will open the frontend on `http://localhost:8501`.
 5. The FastAPI backend will run on `http://localhost:8000`.
-6. To run with a real Gemini API Key, set `GEMINI_API_KEY=your_key` in a `.env` file or export it in your terminal before running.
+6. To run with a real Gemini API Key, set `GEMINI_API_KEY=your_key` in a `.env` file in the project root directory.
